@@ -13,32 +13,67 @@ export class Pokemon extends Entity {
     type: 'string',
     required: true,
   })
-  name: string;
+  Name: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  Type1: string;
+
+  @property({
+    type: 'string',
+  })
+  Type2?: string;
 
   @property({
     type: 'number',
     required: true,
   })
-  height: number;
+  Total: number;
 
   @property({
     type: 'number',
     required: true,
   })
-  weight: number;
+  HP: number;
 
   @property({
     type: 'number',
     required: true,
   })
-  baseExperience: number;
+  Attack: number;
 
   @property({
-    type: 'array',
-    itemType: 'object',
+    type: 'number',
     required: true,
   })
-  abilities: object[];
+  Defense: number;
+
+  @property({
+    type: 'object',
+    required: true,
+  })
+  Sp: object;
+
+  @property({
+    type: 'number',
+    required: true,
+  })
+  Speed: number;
+
+  @property({
+    type: 'number',
+    required: true,
+  })
+  Generation: number;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  Legendary: string;
+
 
   constructor(data?: Partial<Pokemon>) {
     super(data);
