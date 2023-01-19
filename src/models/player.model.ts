@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasMany} from '@loopback/repository';
+import {Pokemon} from './pokemon.model';
 
 @model()
 export class Player extends Entity {
@@ -15,6 +16,8 @@ export class Player extends Entity {
   })
   name: string;
 
+  @hasMany(() => Pokemon)
+  pokemon: Pokemon[];
 
   constructor(data?: Partial<Player>) {
     super(data);
